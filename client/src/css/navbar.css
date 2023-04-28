@@ -1,0 +1,40 @@
+.navbar {
+    height:75px;
+    background-color: rgb(255, 107, 53);
+    display: flex;
+    justify-content: center;
+}
+
+.navContainer {
+    width: 100%;
+    max-width: 1250px;
+    background-color: rgb(255, 107, 53);
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navLogo {
+    font-weight: 500;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.navItems {
+    display: flex;
+    margin-right: 350px;
+}
+
+.navSpan {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 30px;
+    color: whitesmoke;
+}
+
+.navSpan:hover{
+    color: rgb(0, 78, 137);
+}
+

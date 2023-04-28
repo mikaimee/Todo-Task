@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { useEffect,useState } from 'react';
+
+// SCREENS
+import HomeScreen from './screens/HomeScreen';
+import AddTaskScreen from './screens/AddTaskScreen';
+import TaskScreen from './screens/TaskScreen';
+import EditTaskScreen from './screens/EditTaskScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import LogRegScreen from './screens/LogRegScreen';
+import IntroScreen from './screens/IntroScreen';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({id: null})
+  const [width, setWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<IntroScreen/>} />
+        <Route path="/homePage" element={<HomeScreen currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path="/addTask" element={<AddTaskScreen currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path="/task/:id" element={<TaskScreen currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+        <Route path="/task/edit/:id" element={<EditTaskScreen currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+        <Route path="/user/:userId" element = {<ProfileScreen currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+        <Route path="/logReg" element = {<LogRegScreen currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,63 @@
+.oneTaskContainer {
+    border: none;
+    padding: 10px 50px 10px 50px;
+    background-color: rgb(26, 101, 158);
+    border-radius: 10px;
+}
+
+.edOneTask span{
+    padding: 2px;
+    margin: 0px 0px 0px 6px;
+    cursor: pointer;
+    color: rgb(239, 239, 208);
+}
+
+.edOneTask span:hover{
+    cursor: pointer;
+    color: rgb(255, 107, 53);
+}
+
+.topOneTaskBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topOneTaskBar h2 {
+    color: rgb(239, 239, 208);
+}
+
+.taskElementItems {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(239, 239, 208);
+    padding: 14px 10px 2px 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.taskElementItem {
+    margin-bottom: 10px;
+}
+
+.taskElementItemButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oneTaskButton{
+    padding: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    background-color: rgb(0, 78, 137);
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    color: whitesmoke;
+}
+
+.oneTaskButton:hover{
+    cursor: pointer;
+    color: rgb(255, 107, 53);
+}

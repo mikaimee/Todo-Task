@@ -1,0 +1,18 @@
+.projectContainer {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    background-color: rgb(247, 197, 159);
+    border-radius: 10px;
+}
+
+.projectItems{
+    display: flex;
+    flex-direction: column;
+}
+
+.projectItems span {
+    margin-bottom: 5px;
+}

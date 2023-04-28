@@ -1,0 +1,21 @@
+.profileContainer {
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.profileBody{
+    display: flex;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.profileItem1{
+    flex: 1;
+    margin: 20px 20px 5px 10px;
+}
+
+.profileItem2 {
+    flex: 2;
+    margin: 20px 20px 5px 10px;
+}

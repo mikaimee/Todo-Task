@@ -1,0 +1,12 @@
+.logRegContainer{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.logRegBody{
+    display: flex;
+    width: 100%;
+    max-width: 1500px;
+    justify-content: space-evenly;
+}
