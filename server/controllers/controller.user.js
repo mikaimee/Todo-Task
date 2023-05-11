@@ -1,4 +1,6 @@
 const User = require("../models/model.user")
+const asyncHandler = require('express-async-handler')
+
 
 // UPDATE
 const updateUser = async (req, res) => {
@@ -24,7 +26,7 @@ const deleteUser = async (req, res) => {
         const deletedUser = await User.findByIdAndDelete(
             req.params.id
         )
-        res.status(200).json(deletedUser)
+        res.status(200).json({deletedUser, message: 'Successfully deleted user'})
     }
     catch (error) {
         res.status(500).json({

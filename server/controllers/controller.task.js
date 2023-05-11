@@ -45,12 +45,25 @@ const updateTask = async (req, res) => {
 
 // DELETE
 const deleteTask = async (req, res) => {
+    const projectId = req.params.projectid
+
     try{
-        const deletedTask = await Task.findByIdAndDelete(
+        const preDeleteTask = await Task.findById (
+            req.params.id
+        )
+        try{
+            await Project.findByIdAndUpdate(projectId, {$pull: {tasks: preDeleteTask._id}})
+        }
+        catch(error) {
+            console.log(error)
+        }
+        
+        const deleteTask = await Project.findByIdAndDelete(
             req.params.id
         )
         res.status(200).json({
-            success: true
+            success: true,
+            message: "successfully deleted on both user and projects model"
         })
     }
     catch (error) {

@@ -6,13 +6,8 @@ const TaskSchema = new mongoose.Schema({
         required: [true, "Please provide a title"]
     },
     status: {
-        type: String,
-        enum: [
-            "ongoing",
-            "inProgress",
-            "completed",
-            "cancelled"
-        ],
+        type: [String],
+        default: ["Ongoing"],
         required: [true, "Please provide a status"]
     },
     desc: {
@@ -21,5 +16,4 @@ const TaskSchema = new mongoose.Schema({
     }
 }, {timestamps: true})
 
-const Task = mongoose.model("Task", TaskSchema)
-module.exports = Task;
+module.exports = mongoose.model("Task", TaskSchema)

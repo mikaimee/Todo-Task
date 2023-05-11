@@ -1,6 +1,6 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // SCREENS
 import HomeScreen from './screens/HomeScreen';
@@ -12,7 +12,7 @@ import LogRegScreen from './screens/LogRegScreen';
 import IntroScreen from './screens/IntroScreen';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({id: null})
+  const [currentUser, setCurrentUser] = useState({_id: null})
   const [width, setWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<IntroScreen/>} />
+        <Route path="/" element={<IntroScreen/>} />
         <Route path="/homePage" element={<HomeScreen currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/addTask" element={<AddTaskScreen currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/task/:id" element={<TaskScreen currentUser={currentUser} setCurrentUser={setCurrentUser} />} />

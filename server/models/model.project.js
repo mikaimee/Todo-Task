@@ -12,5 +12,4 @@ const ProjectSchema = new mongoose.Schema({
     tasks: [String]
 })
 
-const Project = mongoose.model("Project", ProjectSchema)
-module.exports = Project;
+module.exports = mongoose.model("Project", ProjectSchema)

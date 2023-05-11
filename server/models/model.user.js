@@ -13,7 +13,6 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, "Please provide an email"],
-        unique: true,
         match: [
             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
             "Please provide a valid email"
@@ -52,5 +51,4 @@ userSchema.pre("save", async function(next) {
     next();
 });
 
-const User = mongoose.model("User", userSchema)
-module.exports = User;
+module.exports = mongoose.model("User", userSchema)

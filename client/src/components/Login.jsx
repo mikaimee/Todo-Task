@@ -17,10 +17,11 @@ const Login = ({setCurrentUser}) => {
             email,
             password
         }, {withCredentials: true, credentials: "include"})
-        .then((res) => {
+        .then(res => {
             console.log("successfully logged in", res);
             setCurrentUser(res.data.user)
             navigate("/homePage")
+            window.location.reload(false);
         }).catch((err) => {
             console.log("login error", err)
             setLoginError(err.response.data.errors)
